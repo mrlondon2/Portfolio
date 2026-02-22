@@ -1,11 +1,11 @@
 # OUTPUTS
-#   *_with_phones.csv          - deduplicated caller sheet for phone bank staff
+#   *_with_phones.csv - deduplicated caller sheet for phone bank staff
 #   *_contribution_history.csv - one row per transaction for RFM engineering
-#   *_model_features.csv       - one row per matched donor for modeling
+#   *_model_features.csv - one row per matched donor for modeling
 
 # ENTRY POINTS
-#   validate_inputs()        - pre run checks, no API calls
-#   main()                   - full run; resumes from checkpoint if present
+#   validate_inputs() - pre run checks, no API calls
+#   main() - full run; resumes from checkpoint if present
 #   main(fresh_start = TRUE) - ignore checkpoint, start from record 1
 
 library(httr)
