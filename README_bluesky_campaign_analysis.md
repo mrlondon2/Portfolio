@@ -12,12 +12,12 @@ Built for the Randy Bryce WI-01 congressional campaign to track voter sentiment,
 
 Collects posts from the Bluesky API via keyword search and candidate feed monitoring, runs TextBlob sentiment analysis, loads structured results into a normalized BigQuery schema, and powers an interactive Looker Studio dashboard for non-technical campaign staff.
 
-**Key results from a 7 day proof-of-concept (Feb 15–22, 2026, n=370 posts):**
-- 33.8% positive vs. 12.5% negative sentiment (2.7:1 ratio)
-- Feb 7th post referencing President Obama generated over 340 interactions, largest single engagement spike in the window so far (on Bluesky)
+**Key results from a 7 day proof-of-concept (Feb 15–22, 2026, n=413 posts):**
+- 33.4% positive vs. 12.5% negative sentiment (2.7:1 ratio)
+- Feb 7th post referencing President Obama generated over 413 interactions, largest single engagement spike in the window so far (on Bluesky)
 - Healthcare dominates conversation: `#MedicalSchool`, `#MedSky`, `#SciSky` were top trending hashtags
 
-> **Statistical note:** 370 posts over 7 days is a proof-of-concept, not a statistically robust sample. Bluesky's limited political adoption means these results should not be generalized to the WI-01 electorate. A production system would require multi-platform coverage and larger sample sizes for inference, taking much more time that I do not have during the spring semester.
+> **Statistical note:** 413 posts over 7 days is a proof-of-concept, not a statistically robust sample. Bluesky's limited political adoption means these results should not be generalized to the WI-01 electorate. A production system would require multi-platform coverage and larger sample sizes for inference, taking much more time that I do not have during the spring semester.
 
 ---
 
@@ -105,15 +105,15 @@ CAMPAIGN ANALYSIS SUMMARY
 ============================================================
 CANDIDATE COMPARISON:
  candidate  followers  avg_engagement  avg_sentiment  share_of_voice
-Randy Bryce      12543            847           0.23            96.2
+Randy Bryce     13516          26.744         0.0895          76.428
 
 TOTAL POSTS ANALYZED: 205
-Date Range: 2026-02-15 to 2026-02-17
+Date Range: 2026-02-15 to 2026-02-22
 
 SENTIMENT BREAKDOWN:
-  Neutral:  107 (52.2%)
-  Positive:  71 (34.6%)
-  Negative:  26 (12.7%)
+  Neutral:  141 (56.6%)
+  Positive:  77 (30.9%)
+  Negative:  31 (12.4%)
 ```
 
 **BigQuery tables** - queryable via SQL, autoconnected to Looker Studio dashboard
