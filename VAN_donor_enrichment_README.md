@@ -277,6 +277,22 @@ If a session ends mid run, partial output files are written with a `_PARTIAL` fi
 
 ---
 
+## Design Tradeoffs
+- Synchronous requests: Parallelization was avoided to respect rate limits and ensure predictable recovery behavior
+- Precision over recall in matching: The pipeline favors high‑confidence matches to minimize misdirected outreach, accepting that some true matches will be dropped
+- Expected‑value optimization: Ranking by EV reflects real fundraising constraints better than probability only targeting
+- Checkpoint‑based execution: Throughput is sacrificed in favor of resumability during active fundraising windows
+
+---
+
+## Future Improvements
+- Probabilistic record linkage with learned weights rather than fixed heuristics
+- Network‑based donor clustering once relational data is available
+- Offline back‑testing of EV rankings against realized call outcomes
+- Optional asynchronous batching for committees with explicit API approval
+
+---
+
 ## Runtime Estimates
 
 Each matched record makes up to 5 API calls at 0.5 seconds each:
