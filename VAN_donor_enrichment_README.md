@@ -154,14 +154,14 @@ The default threshold of 50 can be raised to 70 or 90 in the config block. All m
 
 Each matched record makes up to 5 synchronous API calls:
 
-| Call | Endpoint | Mode | Tier |
-|---|---|---|---|
-| Person search | `POST /people/find` | My Campaign (1) | Tier 1+ |
-| Person detail | `GET /people/{vanId}` | My Voters (0) | **Tier 2+** |
-| Phones | `GET /people/{vanId}/phones` | My Campaign (1) | **Tier 2+** |
-| Scores | `GET /people/{vanId}/scores` | My Voters (0) | **Tier 2+** |
-| Voter history | `GET /people/{vanId}/voterHistory` | My Voters (0) | **Tier 2+** |
-| Contributions | `GET /people/{vanId}/contributions` | My Campaign (1) | **Tier 2+** |
+| Call | Endpoint |
+|---|---|
+| Person search | `POST /people/find` |
+| Person detail | `GET /people/{vanId}` |
+| Phones | `GET /people/{vanId}/phones` |
+| Scores | `GET /people/{vanId}/scores` |
+| Voter history | `GET /people/{vanId}/voterHistory` |
+| Contributions | `GET /people/{vanId}/contributions` |
 
 The script is single threaded and synchronous by design, each request completes before the next begins, per VAN's documented requirement. Throttling follows VAN's published limits: 0.5s delay after `POST /people/find` (max 2 req/sec), 0.5s after all GET calls (conservative within the 5 req/sec cap).
 
