@@ -267,7 +267,7 @@ A CSV of original individual contribution records. At minimum:
 
 All three files are written to the same directory as `OUTPUT_FILE`.
 
-**`*_with_phones.csv`** — Caller sheet for phone bank staff. One row per person, deduplicated to highest gift. Contains all original fields plus: `van_cell_phone`, `van_home_phone`, `van_id`, `party_reg`, `van_voter_score`, `turnout_rate`, `match_confidence`, `match_type`.
+**`*_with_phones.csv`** - Caller sheet for phone bank staff. One row per person, deduplicated to highest gift. Contains all original fields plus: `van_cell_phone`, `van_home_phone`, `van_id`, `party_reg`, `van_voter_score`, `turnout_rate`, `match_confidence`, `match_type`.
 
 **`*_contribution_history.csv`** - Primary model input. One row per contribution transaction across all matched donors. Fields: `van_id`, `contrib_amount`, `contrib_date`, `batch_id`, `recipient_name`, `committee_name`, `election_cycle`, `contrib_type`. Used for RFM feature engineering.
 
@@ -281,11 +281,11 @@ If a session ends mid run, partial output files are written with a `_PARTIAL` fi
 
 Each matched record makes up to 5 API calls at 0.5 seconds each:
 
-| List size | Estimated time | Sessions at 55 min budget |
-|---|---|---|
-| 500 donors | ~21 min | 1 |
-| 1,000 donors | ~42 min | 1 |
-| 2,000 donors | ~83 min | 2 |
-| 5,000 donors | ~208 min | 4 |
+| List size | Estimated time |
+|---|---|
+| 500 donors | ~21 min |
+| 1,000 donors | ~42 min |
+| 2,000 donors | ~83 min |
+| 5,000 donors | ~208 min |
 
 ---
