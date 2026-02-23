@@ -22,7 +22,7 @@ The enrichment script (`van_donor_enrichment_v5.R`) handles everything up to and
 
 ## Why a Double Hurdle Model
 
-Donor amount distributions have a structural feature that rules out OLS: a large mass of zeros from lapsed or never converted contacts, combined with a right skewed continuous distribution among those who do give. Fitting a single linear regression on raw amounts conflates two distinct decisions —whether someone gives at all, and how much they give conditional on giving— and produces biased predictions for both.
+Donor amount distributions have a structural feature that rules out OLS: a large mass of zeros from lapsed or never converted contacts, combined with a right skewed continuous distribution among those who do give. Fitting a single linear regression on raw amounts conflates two distinct decisions, whether someone gives at all, and how much they give conditional on giving, and produces biased predictions for both.
 
 The double hurdle framework separates them:
 
@@ -40,7 +40,7 @@ Fit only on contacts who cleared the hurdle (gave at least once). The outcome is
 EV score = P(give) × E(amount | give)
 ```
 
-Contacts are ranked descending by EV score. The top decile is delivered to fundraising staff as a prioritized call sheet. This framing aligns the model objective directly with what our campaigns care about— expected dollars raised per call— rather than optimizing an intermediate metric like predicted probability alone.
+Contacts are ranked descending by EV score. The top decile is delivered to fundraising staff as a prioritized call sheet. This framing aligns the model objective directly with what our campaigns care about, expected dollars raised per call, rather than optimizing an intermediate metric like predicted probability alone.
 
 ---
 
